@@ -14,16 +14,15 @@ const ProductInfo = () => {
     <Suspense fallback={<Loader />}>
       <Await resolve={data.result}>
         {({ data }: { data: IProduct }) => {
-          console.log(data);
           return (
             <article className={styles["product"]}>
               <div className={styles["product__card"]}>
                 <header>
-                  <Heading headingLevel="h1">Наслаждение</Heading>
+                  <Heading headingLevel="h1">{data.name}</Heading>
                 </header>
                 <div className={styles["product__card-content"]}>
                   <div className={styles["product__card-left"]}>
-                    <img src="/pizza.jpg" alt="Изображение пиццы" />
+                    <img src={data.image} alt="Изображение пиццы" />
                   </div>
                   <div className={styles["product__card-right"]}>
                     <p

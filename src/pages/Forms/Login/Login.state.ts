@@ -1,7 +1,7 @@
 import {
   Actions,
-  IAction,
   IForm,
+  IFormAction,
   IState,
 } from "../../../Interfaces/formData.interface";
 export const INIT_STATE: IForm = {
@@ -26,8 +26,8 @@ export const INIT_STATE: IForm = {
   isFormReadyToSubit: false,
 };
 
-export function formReducer(state: IForm, { type, payload }: IAction): IForm {
-  switch (type) {
+export function formReducer(state: IForm, action: IFormAction): IForm {
+  switch (action.type) {
     case Actions.Clear: {
       return INIT_STATE;
     }
@@ -35,11 +35,12 @@ export function formReducer(state: IForm, { type, payload }: IAction): IForm {
       return { ...state, isValid: INIT_STATE.isValid };
     case Actions.Fill: {
       if (
-        typeof payload?.email == "string" &&
-        typeof payload?.password == "string"
+        typeof action.payload?.email == "string" &&
+        typeof action.payload?.password == "string"
       ) {
-        const isValidEmail: boolean = !!payload?.email.trim().length;
-        const isValidPassword: boolean = !!payload?.password.trim().length;
+        const isValidEmail: boolean = !!action.payload?.email.trim().length;
+        const isValidPassword: boolean =
+          !!action.payload?.password.trim().length;
         return {
           ...state,
           isValid: {
@@ -53,8 +54,8 @@ export function formReducer(state: IForm, { type, payload }: IAction): IForm {
     }
     case Actions.SetValue: {
       const newformField: IState[] = state.formfileds.map((field) => {
-        if (payload && field.name in payload) {
-          return { ...field, value: payload[field.name].toString() };
+        if (action.payload && field.name in action.payload) {
+          return { ...field, value: action.payload[field.name].toString() };
         } else {
           return field;
         }

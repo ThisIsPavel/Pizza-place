@@ -20,10 +20,17 @@ export interface IPayload {
   [key: string]: FormDataEntryValue | string;
 }
 
-export interface IAction {
-  type: Actions;
-  payload?: IPayload;
-}
+export type IFormAction =
+  | { type: Actions.Reset }
+  | { type: Actions.Clear }
+  | {
+      type: Actions.Fill;
+      payload: IPayload;
+    }
+  | {
+      type: Actions.SetValue;
+      payload: IPayload;
+    };
 
 export interface IForm {
   isValid: IValidity;

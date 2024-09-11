@@ -1,7 +1,7 @@
 import {
   Actions,
-  IAction,
   IForm,
+  IFormAction,
   IPayload,
   IState,
   IValidity,
@@ -43,23 +43,23 @@ function isRequiredFieldFilled(payload: IPayload) {
   return validityField;
 }
 
-export function formReducer(state: IForm, { type, payload }: IAction): IForm {
-  switch (type) {
+export function formReducer(state: IForm, action: IFormAction): IForm {
+  switch (action.type) {
     case Actions.Clear: {
       return INIT_STATE;
     }
     case Actions.Reset:
       return { ...state, isValid: INIT_STATE.isValid };
     case Actions.Fill: {
-      if (payload) {
+      if (action.payload) {
         const FormAllReady = Object.values(
-          isRequiredFieldFilled(payload)
+          isRequiredFieldFilled(action.payload)
         ).every((item) => item);
         return {
           ...state,
           isValid: {
             ...state.isValid,
-            ...isRequiredFieldFilled(payload),
+            ...isRequiredFieldFilled(action.payload),
           },
           isFormReadyToSubit: FormAllReady,
         };
@@ -68,8 +68,8 @@ export function formReducer(state: IForm, { type, payload }: IAction): IForm {
     }
     case Actions.SetValue: {
       const newformField: IState[] = state.formfileds.map((field) => {
-        if (payload && field.name in payload) {
-          return { ...field, value: payload[field.name].toString() };
+        if (action.payload && field.name in action.payload) {
+          return { ...field, value: action.payload[field.name].toString() };
         } else {
           return field;
         }
