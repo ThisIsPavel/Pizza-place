@@ -1,0 +1,100 @@
+.card {
+  color: var(--text-color);
+  box-shadow: 0px 0px 30px 0px rgba(34, 60, 80, 0.2);
+  width: 400px;
+  padding-bottom: 10px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+/* --Header-- */
+
+.card .card__header {
+  position: relative;
+}
+
+.card .card__img {
+  width: 100%;
+  height: 220px;
+  border-radius: 18px;
+}
+
+.card .image-filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.33;
+  border-radius: 18px;
+}
+
+.card .card__price {
+  background: var(--text-secondary-color);
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--white-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.card .card__currency {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.card .card__add-btn {
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  padding: 4px 6px;
+  transition: all 0.3s;
+}
+
+.card .card__icon {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  min-height: 25px;
+  fill: var(--white-color);
+}
+
+.card .card__rating {
+  position: absolute;
+  background: var(--text-secondary-color);
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--white-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  bottom: -15px;
+  left: 15px;
+}
+
+.card .card__star {
+  color: var(--primary-color);
+}
+
+/* --Footer-- */
+.card .card__footer {
+  padding: 0 10px;
+  margin-top: 30px;
+}
+
+.card .card__title {
+  margin-bottom: 8px;
+}
+
+.card .card__ingredients {
+  color: var(--text-secondary-color);
+}

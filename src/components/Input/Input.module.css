@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  margin-bottom: 5px;
+  color: var(--text-secondary-color);
+}
+.input {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-color);
+  background: #ffffff6b;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 20px;
+}
+.input::placeholder {
+  color: var(--text-secondary-color);
+}
+
+.invalid {
+  border: 1px solid red;
+}

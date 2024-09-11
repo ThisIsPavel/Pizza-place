@@ -1,0 +1,23 @@
+.menu {
+  height: 100%;
+}
+
+.menu .menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu .menu__cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  row-gap: 70px;
+}
+
+.menu__not-found {
+  font-size: 40px;
+  font-weight: 500;
+}

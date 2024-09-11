@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+}
+.img {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input {
+  min-width: 240px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-color);
+  background: #fcfcfd;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 13px 30px;
+}

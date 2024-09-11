@@ -1,0 +1,23 @@
+.user {
+  flex-grow: 1;
+  text-align: center;
+}
+.user__avatar {
+  height: 120px;
+  width: 120px;
+  flex-grow: 0;
+}
+
+.user__info {
+  margin-top: 10px;
+}
+
+.user__name {
+  font-weight: 500;
+}
+
+.user__email {
+  font-size: 14px;
+  color: var(--text-secondary-color);
+  font-weight: 400;
+}

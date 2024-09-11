@@ -1,0 +1,13 @@
+.heading {
+  color: var(--text-color);
+}
+
+.heading.heading--h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.heading.heading--h1 {
+  font-size: 36px;
+  font-weight: 600;
+}

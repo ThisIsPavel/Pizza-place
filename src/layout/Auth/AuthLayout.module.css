@@ -1,0 +1,30 @@
+.auth {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  padding: 20px 0;
+  background: #e6e5e4;
+}
+.auth__left {
+  padding: 0 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid var(--white-color);
+}
+
+.auth__logo {
+  width: 400px;
+  height: 400px;
+}
+
+.auth__logo-title {
+  color: var(--primary-color);
+}
+
+.auth__right {
+  flex: 2;
+  padding: 0 30px;
+}
